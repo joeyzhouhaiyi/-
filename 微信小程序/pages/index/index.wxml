@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!--顶部个人栏-->
+  <view class="profileBar">
+    <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    </view>
+    <view class="buySellButton">
+    <button bindtap='postRequest'>发布二手请求</button>
+    </view>
+  </view>
+
+  <!--顶部导航栏-->
+  <view class="navBar">
+    <text wx:for="{{navBar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="nav" bindtap="navBarTap">{{item}}</text>
+  </view>
+
+  <!--顶部二级导航栏-->
+  <view class="subNavBar">
+    <text wx:for="{{subNavBar}}" data-idx="{{index}}" class="item {{subCurrentTab==index ? 'active' : ''}}" wx:key="subNav" bindtap="subNavTap">{{item}}</text>
+  </view>
+
+  <!--页面主要内容栏-->
+  <view class="mainContent">
+      <view hidden="{{currentTab!==0}}">
+          <view hidden="{{subCurrentTab!==0}}">
+            <view wx:for="{{article_list}}" class="row" wx:key="">
+                <!-- 缩略图 -->
+                <view>
+                    <image src="{{item.thumb}}" class="thumb" mode="aspectFill" />
+                </view>
+                <!-- 标题与日期 -->
+                <view>
+                    <!-- 标题 -->
+                    <view class="itemName">物品名称：{{item.itemName}}</view>
+                    <!-- 日期 -->
+                    <view class="price">价格：{{item.price}}</view>
+                </view>
+</view>
+<!-----=========================================================-->
+          </view>  
+          <view hidden="{{subCurrentTab!==1}}">标签2</view>
+          <view hidden="{{subCurrentTab!==2}}">标签3</view>
+          <view hidden="{{subCurrentTab!==3}}">标签4</view>
+          <view hidden="{{subCurrentTab!==4}}">标签5</view>
+      </view>
+      <view hidden="{{currentTab!==1}}">
+          <view hidden="{{subCurrentTab!==0}}">p标签1</view>
+          <view hidden="{{subCurrentTab!==1}}">p标签2</view>
+          <view hidden="{{subCurrentTab!==2}}">p标签3</view>
+          <view hidden="{{subCurrentTab!==3}}">p标签4</view>
+          <view hidden="{{subCurrentTab!==4}}">p标签5</view>  
+      </view> 
+  </view>
+</view>

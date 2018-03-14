@@ -1,0 +1,133 @@
+/**index.wxss**/
+.container{
+  overflow-x: hidden;
+}
+.profileBar{
+  height: 150rpx;
+  width:100%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: #000 solid 1px;
+}
+/**一级导航**/
+.navBar{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+}
+.navBar .item{
+position: relative;
+flex: auto;
+text-align: center;
+line-height: 80rpx;
+}
+.navBar .item.active{
+  color: red;
+}
+.navBar .item.active:after{
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: red;  
+}
+/**二级导航**/
+.subNavBar{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+}
+.subNavBar .item{
+position: relative;
+flex: auto;
+text-align: center;
+line-height: 80rpx;
+}
+.subNavBar .item.active{
+  color: red;
+}
+.subNavBar .item.active:after{
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: red;  
+}
+
+.buySellButton{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+}
+.buySellButton button{
+  width: 80%;
+  height: 80%;
+  margin: 10rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+/**滚动条**/
+.getPosts{
+  display: flex;
+  width: 750rpx;
+  height: 150rpx;
+  border: 1px solid lightcyan; 
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+/*缩略图*/
+.thumb {
+    width: 100px;
+    height: 75px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/*文章标题*/
+.itemName {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    line-height: 130%;
+}
+
+/*日期*/
+.price {
+    font-size: 14px;
+    color: #999;
+    margin: 10px 0;
+}
+

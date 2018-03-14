@@ -1,0 +1,62 @@
+<view class="container">
+<form bindsubmit="formSubmit">
+<view class="category">基本信息</view>
+  <view class="formRow">
+    <label class="radio" wx:for="{{items1}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </view>
+  <view class="formRow">
+  <view class="name">价格($CAD)</view>
+  <input class="inputContent" name="price" type="number" maxlength="7" placeholder="20" />
+  </view>
+<view class="category">联系人信息</view>
+<view class="formRow">
+  <view class="name">姓名</view>
+  <input class="inputContent" name="contactName" placeholder="请输入联系人姓名" />
+</view>
+<view class="formRow">
+  <view class="name">性别</view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items2}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+</view>
+<view class="formRow">
+  <view class="name">联系电话</view>
+  <input class="inputContent" name="phone" type="number" maxlength="10" placeholder="5141234567" />
+</view>
+<view class="category">物品信息</view>
+  <view class="section">
+    <view class="formRow">物品名称</view>
+    <input class="inputContent" name="itemName" placeholder="请输入物品名称" />
+  </view>
+  <view class="section section_gap">
+    <view class="formRow">新旧程度(%)</view>
+    <slider name="slider" show-value ></slider>
+  </view>
+
+  <view class="section">
+    <view class="formRow">物品描述</view>
+    <input class="inputContent" name="itemDescription" placeholder="请输入物品描述" />
+  </view>
+  <view class="section">
+    <view class="label">物品标签</view>
+    <picker bindchange="bindTagPickerChange" value="{{tagIndex}}" range="{{tagArray}}">
+      <view>
+        <text>{{tagArray[tagIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section section_gap">
+    <view class="formRow">物品图片</view>
+    <button bindtap='uploadPic'>上传图片</button>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" >提交</button>
+  </view>
+</form>
+
+</view>

@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/request/request"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "二手市场",
+        "iconPath": "resources/market.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "个人信息",
+        "iconPath": "resources/profile.png"
+      }
+    ]
+  }
+}

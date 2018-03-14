@@ -1,0 +1,11 @@
+{
+  "miniprogramRoot": "./",
+  "appid":"wx53391ef0111e554d",
+  "projectname":"浣熊二手",
+  "setting": {
+    "postcss": true,
+    "es6": true,
+    "minified": true,
+    "urlCheck": false
+  }
+}
